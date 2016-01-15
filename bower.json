@@ -1,0 +1,21 @@
+{
+  "name": "supportdashboard",
+  "description": "Support Dashboard application",
+  "main": "server.js",
+  "authors": [
+    "Santhosh Raju"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/SanthoshRaju91/SupportDashboard",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8"
+  }
+}

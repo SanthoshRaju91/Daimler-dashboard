@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+    <head>
+        <title>DashBoard application page</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">   
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   <!-- <a href="#menu-toggle" class="navbar-brand" id="menu-toggle"><i class="ion-arrow-swap"></i></a>-->
+                    <a class="navbar-brand" >QA Dashboard</a>
+                    
+                 </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Themes</a></li>
+                        <li><a href="#">Alerts <span class="badge">10</span></a></li>
+                        <li><a href="#" class = "btn btn-default btn-logout" style = "color: black !important;">Logout</a></li>
+                    </ul>                            
+                </div>
+            </div>
+        </nav>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <div class="profile-container">
+                    <div class="thumbnail">
+                        <img src="images/icon-user.png" width="100px" height="100px" class = "img-circle">
+                        <div class="caption">
+                            <h3>Santhosh Raju</h3>
+                            <button class="btn btn-default btn-sm text-center">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sidebar-nav">
+                    <li >
+                        <a href="#/dashboard"><span class = "ion-ios-pulse icon"></span> Dashboard</a>
+                    </li>                
+                    <li>
+                        <a href="#/tasks"><span class="ion-ios-people-outline icon"></span> Tasks</a>
+                    </li>                  
+                    <li>
+                        <a href="/reports"><span class="ion-ios-paper-outline icon"></span> Reports</a>
+                    </li>
+                    <li>
+                        <a href="/add"><span class="ion-ios-plus-outline icon"></span> Add</a>
+                    </li>
+                    <li>
+                        <a href="/contact"><span class="ion-ios-paperplane-outline icon"></span> Contact</a>
+                    </li>                   
+                </ul>
+            </div>
+        </div>          
+        <div class = "col-md-offset-2 col-md-8 view-container">
+            <div ng-view></div>
+        </div>
+        
+        <script src="js/app.js"></script>
+        <script src="js/controllers/dashboardController.js"></script>
+    </body>
+</html>
