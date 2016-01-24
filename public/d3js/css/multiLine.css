@@ -1,0 +1,22 @@
+#multiLine .axis path,
+#multiLine .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+    
+#multiLine .legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+#multiLine path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+#multiLine {
+    height: 300px;
+}

@@ -22,6 +22,7 @@
     "angular": "~1.4.8",
     "Ionicons": "ionicons#~2.0.1",
     "highcharts-ng": "~0.0.11",
-    "d3": "~3.5.13"
+    "d3": "~3.5.13",
+    "angular-nvd3": "~1.0.5"
   }
 }

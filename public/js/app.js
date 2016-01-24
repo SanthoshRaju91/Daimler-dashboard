@@ -37,7 +37,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 
 myApp.controller('mainController', ['$scope', function($scope) {
     
-    $scope.colorList = ['#D91E18', '#663399', '#26A65B', '#D35400', '#6C7A89', '#03C9A9'];
+    $scope.colorList = ['#D91E18', '#9B59B6', '#26A65B', '#D35400', '#6C7A89', '#03C9A9', '#2b597b'];
     
     $scope.applyTheme = function(theme) {
       $scope.selectedBorder = theme;

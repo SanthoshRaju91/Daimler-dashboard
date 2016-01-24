@@ -1,4 +1,14 @@
-body { 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  overflow: auto;
+  height: 100%;
+}
+
+.modal-open {
+ overflow: auto; 
 }
 
 .main-content {
@@ -28,13 +38,13 @@ body {
 
 .navbar-inverse {
     margin-bottom: 0px;
-    background: #282c2f;
-    border-color: #282c2f;    
+    background: #2b597b;
+    border-color: #2b597b;    
 }
 
 
 .navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>li>a{color:#F2F1EF ! important;}
-.navbar-inverse .badge {background:#ccc; border-color: #282c2f;border:1px solid;font-size: :11px}
+.navbar-inverse .badge {background:#ccc; border-color: #2b597b;border:1px solid;font-size: :11px}
 
 .main-container {
     margin-top: 65px;
@@ -88,7 +98,7 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #282c2f ;
+    background: #2b597b ;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -265,8 +275,8 @@ div#arrowred {
 }
 
 .thumbnail-custom {
-    background: #282c2f;
-    border-color: #282c2f;
+    background: #2b597b;
+    border-color: #2b597b;
 }
 .thumbnail-custom img {
     border: 2px solid #F2F1EF;
@@ -291,10 +301,12 @@ div#arrowred {
     width: 80%;
 }
 
-.project-head {
+.program-head {
     text-transform: uppercase;
     word-spacing: 1px;
     letter-spacing: 1px;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .well h4 {
@@ -330,7 +342,7 @@ div#arrowred {
 }
 
 .notification-container {
-    width: 25%;
+    /*width: 25%;*/
 }
 
 .pie-container {
@@ -338,7 +350,7 @@ div#arrowred {
 }
 
 .piechart {
-    height: 250px !important;
+    height: 200px !important;
     overflow: hidden !important;
 }
 
@@ -398,3 +410,74 @@ div#arrowred {
     font-weight: lighter;
     font-size: 12px;
 }
+
+.d3-chart-style svg {
+    height: 75%;
+}
+
+/*** FOR LIST-GROUP ITEM H5 ELEMENT ***/
+.list-group-item h5 {
+    margin: 0px;
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    padding: 5px;
+}
+
+/*** FOR MAIN DASHBOARD HEADER ELEMENT***/
+.dashboard-header {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-size: 18px;
+    height: 18px;
+}
+
+/*** FOR PROGRAM, LOB, PEOPLE VIEW BUTTONS ***/
+.views-button-custom {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+/*** FOR PROGRAM HEALTH CONTAINER***/
+.program-health-container {
+    padding: 0px;
+    padding-left: 35px;
+}
+
+.program-health {
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+
+/*** FOR PROJECT SUMMARY HEALTH CONTAINER ***/
+
+/*
+
+#chart1 svg {
+  height: 500px;
+  margin: 10px;
+  min-width: 100px;
+  min-height: 100px;
+  margin-top: 100px;
+}
+ #chart2, #chart3 {
+    height: 500px;
+    margin-top: 200px;
+}
+    
+#chart4 {
+    height: 500px;
+    margin-top: 300px;
+}
+ 
+
+#barChart {
+      height: 500px;
+  margin: 10px;
+  min-width: 100px;
+  min-height: 100px;
+}*/

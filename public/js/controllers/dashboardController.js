@@ -114,7 +114,10 @@ app.controller('dashboardController', ['$scope', function($scope) {
               },
               options: {
                 chart: {
-                  type: 'pie'
+                    type: 'pie',
+                    credits: {
+                        enabled: false
+                    }    
                 },
                 drilldown: {
                   series: NUMBER_OF_OFFERS_BY_TREND
@@ -137,14 +140,14 @@ app.controller('dashboardController', ['$scope', function($scope) {
                 plotOptions: {
                     pie: {
                         shadow: false,
-                        center: ['50%', '15%']
+                        center: ['50%', '35%']
                     }
                 }
               },
               series: [{
                 name: 'Trends',
                 colorByPoint: true,
-                size: '35%',
+                size: '70%',
                 data: TREND_LIST
               }] 
             };

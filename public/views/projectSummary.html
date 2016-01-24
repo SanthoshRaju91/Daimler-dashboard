@@ -1,8 +1,150 @@
-<div class="container-fluid" style = "overflow: hidden; margin-top: 15px;">
+<div class="container-fluid animated fadeIn" style = "overflow: hidden; margin-top: 15px;">
     <div class="panel panel-default program-level-header">
         <div class="panel-body">
             <h5 class = "pull-left" style = "padding-top: 5px">Project Summary</h5>
             <a href = "#/dashboardView" class = "pull-right btn btn-warning btn-sm view-text">Back To DashBoard View</a>
         </div>
+    </div>    
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h5 class="text-center">Project Health Summary</h5>
+            <br>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-4 project-summary-health">
+                    <div id="container-rpm" style="width: 300px; height: 200px; margin: 0px; float: left"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="bulletChart"></div>
+                </div>
+            </div>                                                   
+        </div>
+    </div>    
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5 class="text-center">Schedule Variance</h5>
+                    <highchart id="chart1" config="scheduleConfig" class="span10"></highchart>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5 class="text-center">Effort Variance</h5>
+                    <highchart id="chart1" config="effortConfig" class="span10"></highchart>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<script>
+   plotBulletChart();
+</script>
+
+<script>
+
+    $(function() {
+        var gaugeOptions = {
+
+            chart: {
+                type: 'solidgauge'
+            },
+
+            credits: {
+              enabled: false  
+            },
+            title: null,
+
+            pane: {
+                center: ['50%', '85%'],
+                size: '140%',
+                startAngle: -90,
+                endAngle: 90,
+                background: {
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                    innerRadius: '60%',
+                    outerRadius: '100%',
+                    shape: 'arc'
+                }
+            },
+
+            tooltip: {
+                enabled: false
+            },
+
+            // the value axis
+            yAxis: {
+                stops: [
+                    [0.1, '#55BF3B'], // green
+                    [0.5, '#DDDF0D'], // yellow
+                    [0.9, '#DF5353'] // red
+                ],
+                lineWidth: 0,
+                minorTickInterval: null,
+                tickPixelInterval: 400,
+                tickWidth: 0,
+                title: {
+                    y: -70
+                },
+                labels: {
+                    y: 16
+                }
+            },
+
+            plotOptions: {
+                solidgauge: {
+                    dataLabels: {
+                        y: 5,
+                        borderWidth: 0,
+                        useHTML: true
+                    }
+                }
+            }
+        };
+        // The RPM gauge
+        $('#container-rpm').highcharts(Highcharts.merge(gaugeOptions, {
+            yAxis: {
+                min: 0,
+                max: 100,
+                title: {
+                    text: 'PROJECT HEALTH'
+                }
+            },
+
+            series: [{
+                name: 'PROJECT HEALTH',
+                data: [60],
+                dataLabels: {
+                    format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                        ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+                           '<span style="font-size:12px;color:silver"></span></div>'
+                },
+                tooltip: {
+                    valueSuffix: 'Health'
+                }
+            }]
+
+        }));
+
+        // Bring life to the dials
+        setTimeout(function () {    
+            // RPM
+            chart = $('#container-rpm').highcharts();
+            if (chart) {
+                point = chart.series[0].points[0];
+                inc = Math.random() - 5;
+                newVal = point.y + inc;
+
+                if (newVal < 0 || newVal > 5) {
+                    newVal = point.y - inc;
+                }
+                point.update(newVal);
+            }
+        }, 2000);
+
+    }());
+    
+</script>

@@ -5,6 +5,9 @@
         <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">          
         <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">        
+        <link href="/d3js/css/multiLine.css" rel="stylesheet">
+        <link href="/d3js/css/barChart.css" rel="stylesheet">
+        <link href="/d3js/css/bullet.css" rel="stylesheet">
         
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="http://code.highcharts.com/highcharts.src.js"></script>        
@@ -16,9 +19,56 @@
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>        
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.13/d3.min.js" charset="utf-8"></script>
+        
+        <script src="/bower_components/d3/d3.js"></script>
+        <script src="/bower_components/nvd3/build/nv.d3.js"></script>
+        <script src="/bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+        <link rel="stylesheet" href="/bower_components/nvd3/build/nv.d3.css">
+        <!--<link href="/d3js/css/bootstrap.css" rel="stylesheet"> -->
+	    <link href="/d3js/css/nv.d3.css" rel="stylesheet" type="text/css">
+        <link href="/d3js/css/common.css" rel="stylesheet">
+        <link href="/d3js/css/desert.css" rel="stylesheet">                   
+        
+        <!--<script src="d3js/lib/d3.v3.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+        <script src="/d3js/lib/nv.d3.js"></script>
+        <script src="/d3js/js/utils.js"></script>
+        <script src="/d3js/js/plotMultiLine.js"></script>
+        <script src="/d3js/js/plotBarChart.js"></script>
+        <script src="/d3js/js/bullet.js"></script>
+        <script src="/d3js/js/plotBulletChart.js"></script>
+        <script src="/d3js/js/tooltip.js"></script>
+        <script src="/d3js/js/models/legend.js"></script>
+        <script src="/d3js/js/models/axis.js"></script>
+        <script src="/d3js/js/models/scatter.js"></script>
+        <script src="/d3js/js/models/line.js"></script>        
+        <script src="/d3js/js/models/historicalBar.js"></script>
+        <script src="/d3js/js/models/linePlusBarWithFocusChart.js"></script>
+        <script src="/d3js/js/models/stackedArea.js"></script>
+        <script src="/d3js/js/models/stackedAreaChart.js"></script>
+        <script src="/d3js/lib/prettify.js"></script>
+        
+        <script src="/d3js/js/stream_layers.js"></script>
+        
+        <!--Custom Charts-->
+        <script src="/d3js/charts/focusChart.js"></script>
+        <script src="/d3js/charts/multiStackedAreaChart.js"></script>
+        
+        <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body ng-controller = "mainController">
+    <body ng-controller = "mainController">        
+        <div class="modal fade" id = "themeModal" role = "dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Choose Theme - Click to select Theme</h4>                
+                        <a  ng-repeat = "color in colorList" class="colorBlock" style="background: {{color}}" data-dismiss = "modal" ng-click = "applyTheme(color)"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-inverse navbar-fixed-top" ng-style = "theme" style = "border-color: {{selectedBorder}}">
             <div class="container">
                 <div class="navbar-header">
@@ -75,19 +125,7 @@
             <div class="col-md-offset-2 col-md-8 view-container">
                 <div class="container-fluid" ng-view></div>
             </div>            
-        </div>
-        
-        <div class="modal fade" id = "themeModal" role = "dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <h4>Choose Theme - Click to select Theme</h4>                
-                        <a  ng-repeat = "color in colorList" class="colorBlock" style="background: {{color}}" data-dismiss = "modal" ng-click = "applyTheme(color)"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        </div>                
         <script src="/js/d3/liquidFillGauge.js" language="JavaScript"></script>
         <script src="/js/d3/index.js"></script>
         <script src="/js/d3/bullet.js"></script>

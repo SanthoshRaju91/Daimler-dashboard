@@ -18,8 +18,8 @@ router.post('/login', function(req, res) {
            res.json({status: 404, message: "No user found"});
        } else {
            logger.info("User " + result[0].username + " logged in successfully");
-           if(result[0].role === 'PMA' ) {
-               res.send({statusL: 200, result: result});
+           if(result[0].role === 'PMA' || result[0].role === 'PM') {
+               res.send({status: 200, result: result});
            } else {
                res.send("Please check your authorization point on the application and contact the administrator");
            }

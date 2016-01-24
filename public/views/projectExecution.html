@@ -1,8 +1,176 @@
-<div class="container-fluid" style = "overflow: hidden; margin-top: 15px;">
+<div class="container-fluid animated fadeIn" style = "overflow: hidden; margin-top: 15px;">
     <div class="panel panel-default program-level-header">
         <div class="panel-body">
             <h5 class = "pull-left" style = "padding-top: 5px">Project Execution</h5>
             <a href = "#/dashboardView" class = "pull-right btn btn-warning btn-sm view-text">Back To DashBoard View</a>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default" >
+                <div class="panel-body" style="overflow: hidden;">
+                    <h5 class="text-center">Project Execution Productivity</h5>              
+                    <div id="multiLine">         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default" >
+                <div class="panel-body" style="overflow: hidden;">
+                    <h5 class="text-center">Project Execution Status</h5> 
+                    <div id="projectExecutionStatus"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    <div class="panel panel-default" >
+        <div class="panel-body" style="overflow: hidden;">
+            <h5 class="text-center">Project Execution by Resource</h5>
+            <div id="chart1" class='with-3d-shadow with-transitions d3-chart-style'>
+                <svg> </svg>
+            </div>
+        </div>
+    </div>
+    <script>
+    drawLineChart();
+    </script>
+
+    <div class = "panel panel-default">
+        <div class="panel-body">
+            <h5 class = "text-center">Automation Test Cases<s/h5>        
+            <div class='with-3d-shadow with-transitions d3-chart-style'>
+                <svg id="chart2" ></svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    stackedAreaChart();
+    </script>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h5 class = "text-center">Automation Execution Status</h5>
+            <div id='chart4' class="d3-chart-style">
+                <svg style='height:750px;'> </svg>
+            </div>
+        </div>
+    </div>                
+    <script src="d3js/charts/multiBar.js"></script>
+            
+    <script>
+        var data = [
+            {
+                "symbol": "Planned",
+                "date": "Feb 2000",
+                "price": "36.35"
+    },
+            {
+                "symbol": "Planned",
+                "date": "Mar 2003",
+                "price": "43.22"
+    },
+            {
+                "symbol": "Planned",
+                "date": "Apr 2005",
+                "price": "38.37"
+    },
+            {
+                "symbol": "Planned",
+                "date": "May 2006",
+                "price": "25.45"
+    },
+            {
+                "symbol": "Planned",
+                "date": "Jun 2007",
+                "price": "32.54"
+    },
+            {
+                "symbol": "Planned",
+                "date": "Mar 2010",
+                "price": "28.8"
+    },
+            {
+                "symbol": "Actual",
+                "date": "Jan 2000",
+                "price": "25.35"
+    },
+            {
+                "symbol": "Actual",
+                "date": "Feb 2003",
+                "price": "35.87"
+    },
+            {
+                "symbol": "Actual",
+                "date": "Mar 2005",
+                "price": "30"
+    },
+            {
+                "symbol": "Actual",
+                "date": "Apr 2006",
+                "price": "25.19"
+    },
+            {
+                "symbol": "Actual",
+                "date": "May 2007",
+                "price": "22.31"
+    },
+            {
+                "symbol": "Actual",
+                "date": "Jun 2010",
+                "price": "25.31"
+    }
+];
+         plotMultiLineChart("multiLine",data);
+    </script>        
+            
+    <script>
+         var data = [
+            {
+                "letter": "Day 1",
+                "frequency": 0.08167
+            },
+            {
+                "letter": "Day 2",
+                "frequency": 0.01492
+            }
+             ,
+            {
+                "letter": "Day 3",
+                "frequency": 0.05492
+            },
+            {
+                "letter": "Day 4",
+                "frequency": 0.03492
+            },
+            {
+                "letter": "Day 5",
+                "frequency": 0.09492
+            },
+            {
+                "letter": "Day 6",
+                "frequency": 0.07492
+            },
+            {
+                "letter": "Day 7",
+                "frequency": 0.02592
+            },
+            {
+                "letter": "Day 8",
+                "frequency": 0.03692
+            },
+            {
+                "letter": "Day 9",
+                "frequency": 0.05892
+            },
+            {
+                "letter": "Day 10",
+                "frequency": 0.07292
+            }
+        ];
+        plotBarChart(data,"projectExecutionStatus");
+    </script>
 </div>

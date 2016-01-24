@@ -1,12 +1,12 @@
-<div style = "overflow: hidden;">
+<div style = "overflow: hidden;" class = "animated fadeIn">
     <div class="well well-sm" style = "margin-bottom: 10px;">
-        <h4 class = "text-center">M.B.R.D.I QA Dashboard</h4>
+        <h4 class = "text-center dashboard-header">M.B.R.D.I QA Dashboard</h4>
     </div>
 
     <div class="row" style = "margin-left: 3px;">
-        <div class = "col-sm-9 panel panel-default">
-            <div class="panel-body">
-                <h3 class="text-center project-head">Program Health</h3>
+        <div class = "col-sm-8 panel panel-default program-health">
+            <div class="panel-body program-health-container">
+                <h3 class="text-center program-head animated flash">Program Health</h3>
                 <div style = "display: inline">
                     <div id="container-speed" style="width: 160px; height: 150px; margin: 0px; float: left"></div>
                     <div id="container-rpm" style="width: 160px; height: 150px; margin: 0px; float: left"></div>
@@ -15,56 +15,56 @@
                 </div>                             
             </div>        
         </div>
-        <div class="col-sm-2 notification-container">
-             <div class="panel panel-primary">
-                <div class = "panel-heading" data-target = "#panelCollapse" data-toggle = "collapse" role="button" >
-                    <h5 class="text-center">Notification Board</h5>
+        <div class="col-sm-4 notification-container">
+             <div class="list-group">
+                <div class="list-group-item active">
+                    <h5 class="text-center">Bulletin board</h5>
                 </div>
-                <div class="panel-body collapse" id = "panelCollapse">
-                    <ul class = "list-group">
-                        <li class = "list-group-item">New Requirement</li>
-                        <li class = "list-group-item">New Defects</li>
-                        <li class = "list-group-item">New Requirement</li>
-                    </ul>
-                </div>
+              <a href="" class="list-group-item">Dapibus ac facilisis in</a>
+              <a href="" class="list-group-item">Morbi leo risus</a>
+              <a href="" class="list-group-item">Porta ac consectetur ac</a>
             </div>
         </div>
     </div>
 
     <div class = "row" style = "margin-top: 0px;">
-        <div class="col-md-6">
-            <div class="panel panel-default pie-container">
-                <div class="panel-body">
-                    <h5 class = "text-center">Resource Distribution across Global</h5>
-                    <highchart config="chartConfig" class="span10" class = "piechart"></highchart>
+        <div class="col-md-4">
+            <div class="panel panel-default" style="margin-left: 4px;">                
+                <div class="panel-body">   
+                    <h5 class = "text-center">Program View</h5>  
+                    <highchart config="chartConfig" class="span10 piechart"></highchart>                    
+                    <span class="text-center">
+                        <a href="#/programView" class="btn btn-danger btn-sm views-button-custom">Click for complete Program View</a>
+                    </span>                    
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h5 class="text-center">Quick View Dashboard</h5>
-                    <br>
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label class = "col-sm-offset-1 col-sm-4 control-label view-text">Program level view</label>
-                            <div class="col-sm-6">
-                                <a href = "#/programView" class="btn btn-primary view-text">PROGRAM DASHBOARD</a>
-                            </div>                    
-                        </div>  
-                        <div class="form-group">
-                            <label class = "col-sm-offset-1 col-sm-4 control-label view-text">Program level people view</label>
-                            <div class="col-sm-6">
-                                <a href = "#/lobView" class="btn btn-danger view-text">LOB DASHBOARD</a>
-                            </div>                    
-                        </div>
-                    </div>
+                    <h5 class = "text-center">Lob view</h5>
+                    <highchart config="chartConfig" class="span10 piechart"></highchart>                    
+                    <span class="text-center">
+                        <a href="#/lobView" class="btn btn-danger btn-sm views-button-custom" style = "margin-left: 18px;">Click for complete Lob View</a>
+                    </span> 
                 </div>
             </div>
-            
-            <marquee class="rolling-text">Daimler M.B.R.D.I QA dashboard: View for the project landing page. </marquee>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5 class = "text-center">People View</h5>
+                    <highchart config="chartConfig" class="span10 piechart"></highchart>                    
+                    <span class="text-center">
+                        <a href="#/lobView" class="btn btn-danger btn-sm views-button-custom" style="margin-left: 8px;">Click for complete People View</a>
+                    </span>     
+                </div>
+            </div>
         </div>
     </div>
+    <marquee class="rolling-text">Daimler M.B.R.D.I QA dashboard: View for the project landing page. </marquee>
 </div>
 
 <script>
@@ -73,7 +73,10 @@
     var gaugeOptions = {
 
         chart: {
-            type: 'solidgauge'
+            type: 'solidgauge',
+            credits: {
+                enabled: false
+            }
         },
 
         title: null,
@@ -164,6 +167,10 @@
             }
         },
 
+        credits: {
+            enabled: false
+        },
+
         series: [{
             name: 'RPM',
             data: [1],
@@ -227,6 +234,9 @@
             }
         },
 
+        credits: {
+            enabled: false
+        },
         series: [{
             name: 'RPM',
             data: [1],
