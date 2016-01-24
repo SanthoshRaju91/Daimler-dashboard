@@ -1,0 +1,34 @@
+<div class="container-fluid" style = "overflow: hidden; margin-top: 15px;">
+    <div class="panel panel-default program-level-header">
+        <div class="panel-body">
+            <h5 class = "pull-left" style = "padding-top: 5px">Program level KPI dashboard</h5>
+            <a href = "#/dashboardView" class = "pull-right btn btn-warning btn-sm view-text">Back To DashBoard View</a>
+        </div>
+    </div>
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5 class = "text-center">Total test cases executed every month</h5>
+                <highchart id="chart1" config="testCaseConfig" class="span10"></highchart>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5 class="text-center">Total Defects logged every month</h5>
+                <highchart id="chart1" config="defectConfig" class="span10"></highchart>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5 class = "text-center">Level of Automation across india center</h5>
+                <highchart id="chart1" config="automationConfig" class="span10"></highchart>
+            </div>
+        </div>
+    </div>
+</div>

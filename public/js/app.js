@@ -1,28 +1,49 @@
-var myApp = angular.module('myApp', ['ngRoute', 'dashBoard']);
+var myApp = angular.module('myApp', ['ngRoute', 'dashBoard', 'programLevel', 'lobView', 'projectSummary', 'viewProfile', 'projectExecution']);
+
 
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     
     
-    $routeProvider
+    $routeProvider    
     .when('/dashboard', {
+        templateUrl: 'index.html'
+    })
+    .when('/dashboardView', {
         templateUrl: 'views/dashboard.html',
         controller: 'dashboardController'
     })
-    .when('/tasks', {
-        templateUrl: 'views/tasks.html',
-        controller: 'taskController'
+    .when('/programView', {
+        templateUrl: 'views/programLevel.html',
+        controller: 'programLevelController'
     })
-    .when('/reports', {
-        templateUrl: 'views/reports.html',
-        controller: 'reportController'
+    .when('/lobView', {
+        templateUrl: 'views/lobView.html',
+        controller: 'lobViewController'
     })
-    .when('/add', {
-        templateUrl: 'views/add.html',
-        controller: 'addController'
+    .when('/projectSummary', {
+        templateUrl: 'views/projectSummary.html',
+        controller: 'projectSummaryController'
     })
-    .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'contactController'
+    .when('/projectExecution', {
+        templateUrl: 'views/projectExecution.html',
+        controller: 'projectExecutionController'
+    })
+    .when('/viewProfile', {
+        templateUrl: 'views/viewProfile.html',
+        controller: 'viewProfileController'
     })
     .otherwise({redirectTo: '/'});
+}]);
+
+myApp.controller('mainController', ['$scope', function($scope) {
+    
+    $scope.colorList = ['#D91E18', '#663399', '#26A65B', '#D35400', '#6C7A89', '#03C9A9'];
+    
+    $scope.applyTheme = function(theme) {
+      $scope.selectedBorder = theme;
+      $scope.theme = {
+          background: theme          
+      }
+    };
+    
 }]);

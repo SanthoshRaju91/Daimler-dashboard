@@ -1,0 +1,102 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+    <head>
+        <title>DashBoard application page</title>        
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">          
+        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">        
+        
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.src.js"></script>        
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script src="/bower_components/angular-route/angular-route.min.js"></script>      
+        <script src = '../bower_components/highcharts-ng/dist/highcharts-ng.min.js'></script>                                
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>        
+        
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-controller = "mainController">
+        <nav class="navbar navbar-inverse navbar-fixed-top" ng-style = "theme" style = "border-color: {{selectedBorder}}">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   <!-- <a href="#menu-toggle" class="navbar-brand" id="menu-toggle"><i class="ion-arrow-swap"></i></a>-->
+                    <a class="navbar-brand" >DAIMLER Dashboard</a>
+                    
+                 </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a data-toggle = "modal" data-target = "#themeModal" style = "cursor: pointer">Themes</a></li>
+                        <li><a href="#">Alerts <span class="badge">10</span></a></li>
+                        <li><a href="#" class = "btn btn-default btn-logout" style = "color: black !important;">Logout</a></li>
+                    </ul>                            
+                </div>
+            </div>
+        </nav>
+        <div id="wrapper">
+            <div id="sidebar-wrapper" ng-style = "theme">
+                <div class="profile-container">
+                    <div class="thumbnail thumbnail-custom" ng-style = "theme" style="border-color: {{selectedBorder}}">
+                        <img src="images/icon-user.png" width="100px" height="100px" class = "img-circle">
+                        <div class="caption">
+                            <h3>Raj Narayan</h3>
+                            <a href = "#/viewProfile" class="btn btn-default btn-sm text-center" style = "margin-left: 40px">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sidebar-nav">
+                    <li >
+                        <a href="#/dashboardView"><span class = "ion-ios-pulse icon"></span> Dashboard</a>
+                    </li>                
+                    <li>
+                        <a href="#/programView"><span class="ion-ios-people-outline icon"></span> Program Level KPI's</a>
+                    </li>                   
+                    <li>
+                        <a href="#/lobView"><span class="ion-ios-paper-outline icon"></span> LOB Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#/projectSummary"><span class="ion-ios-plus-outline icon"></span> Project Summary</a>
+                    </li>
+                    <li>
+                        <a href="#/projectExecution"><span class="ion-ios-paperplane-outline icon"></span> Project Execution</a>
+                    </li>                   
+                </ul>
+            </div>
+        </div>          
+        <div id = "page-content-wrapper">
+            <div class="col-md-offset-2 col-md-8 view-container">
+                <div class="container-fluid" ng-view></div>
+            </div>            
+        </div>
+        
+        <div class="modal fade" id = "themeModal" role = "dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4>Choose Theme - Click to select Theme</h4>                
+                        <a  ng-repeat = "color in colorList" class="colorBlock" style="background: {{color}}" data-dismiss = "modal" ng-click = "applyTheme(color)"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/js/d3/liquidFillGauge.js" language="JavaScript"></script>
+        <script src="/js/d3/index.js"></script>
+        <script src="/js/d3/bullet.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/js/controllers/dashboardController.js"></script>    
+        <script src="/js/controllers/programLevelController.js"></script> 
+        <script src="/js/controllers/lobViewController.js"></script> 
+        <script src="/js/controllers/projectSummaryController.js"></script> 
+        <script src="/js/controllers/projectExecutionController.js"></script>         
+        <script src="/js/controllers/viewProfileController.js"></script>         
+</body>
+</html>

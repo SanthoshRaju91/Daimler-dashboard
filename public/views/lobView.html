@@ -1,0 +1,36 @@
+<div class="container-fluid" style = "overflow: hidden; margin-top: 15px;">
+    <div class="panel panel-default program-level-header">
+        <div class="panel-body">
+            <h5 class = "pull-left" style = "padding-top: 5px">LOB Dashboard (Program Level People View)</h5>
+            <a href = "#/dashboardView" class = "pull-right btn btn-warning btn-sm view-text">Back To DashBoard View</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5 class="text-center">Split of resources - Contractor v/s employee</h5>
+                    <highchart id="chart4" config="resourceConfig" class="span10"></highchart>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5 class="text-center">Split of resources across geography</h5>
+                    <highchart id="chart5" config="resourceDistributionConfig" class="span10"></highchart>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5 class="text-center">Number of Resources - India v/s Global</h5>
+                <highchart id="chart5" config="resourceIndiaGlobeConfig" class="span10"></highchart>
+            </div>
+        </div>
+    </div>
+</div>

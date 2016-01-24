@@ -10,6 +10,12 @@ body {
     height: 60px
 }
 
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #fff;
+}
 .navbar-brand span {
     margin-right: 5px;
     font-size: 25px;
@@ -22,13 +28,13 @@ body {
 
 .navbar-inverse {
     margin-bottom: 0px;
-    background: #1BA39C !important;
-    border-color: #1BA39C !important;    
+    background: #282c2f;
+    border-color: #282c2f;    
 }
 
 
 .navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>li>a{color:#F2F1EF ! important;}
-.navbar-inverse .badge {background:#ccc; border-color: #1BA39C;border:1px solid;font-size: :11px}
+.navbar-inverse .badge {background:#ccc; border-color: #282c2f;border:1px solid;font-size: :11px}
 
 .main-container {
     margin-top: 65px;
@@ -82,7 +88,7 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #1BA39C;
+    background: #282c2f ;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -96,7 +102,7 @@ body {
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
+    padding: 5px !important;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -258,15 +264,15 @@ div#arrowred {
     width: 210px;
 }
 
-.thumbnail {
-    background: #1BA39C;
-    border-color: #1BA39C;
+.thumbnail-custom {
+    background: #282c2f;
+    border-color: #282c2f;
 }
-.thumbnail img {
+.thumbnail-custom img {
     border: 2px solid #F2F1EF;
     padding: 10px;
 }
-.thumbnail h3 {
+.thumbnail-custom h3 {
     color: #F2F1EF;
     font-size: 20px;
     margin-left: 30px;
@@ -281,6 +287,114 @@ div#arrowred {
 }
 
 .view-container {
-    margin-left: 260px !important;
+    /*margin-left: 260px !important;*/
     width: 80%;
+}
+
+.project-head {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.well h4 {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;    
+}
+
+.panel-body h5 {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.panel-heading h5 {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.panel-health {
+    width: 682px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.well h4 {
+    margin: 0px;
+}
+
+.panel-health h3 {
+    margin-top: 10px;
+}
+
+.notification-container {
+    width: 25%;
+}
+
+.pie-container {
+    height: 260px;
+}
+
+.piechart {
+    height: 250px !important;
+    overflow: hidden !important;
+}
+
+.view-text {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    
+}
+
+.rolling-text {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    background: rgba(26, 25, 25, 0.81);
+    color: #fff;
+    padding: 5px;
+    border-color: #101010;
+    border-radius: 5px;
+}
+
+
+.program-level-header {
+    border-left: 3px solid #D91E18;
+}
+
+.program-level-header h5 {
+    margin: 0px;
+}
+
+.colorBlock {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.colorBlock:hover {
+    transform: scale(1.1);
+}
+
+.modal-body h4 {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.profile-view .control-label {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    border-left: 2px solid #F64747;
+    font-weight: lighter;
+    font-size: 12px;
 }

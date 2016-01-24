@@ -4,12 +4,20 @@ var mongoose = require('mongoose');
 var methodOverride =  require('method-override');   
 var config = require('./config.js').config;
 var logger = require('./utils/loggerUtil.js').logger;
-
+var path = require('path');
 //starting the web application server
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+
+mongoose.connect(config.mongoURL, function(err) {
+   if(err) {
+       logger.error("Unable to connecto mongoDB " +err);
+   } else {
+       logger.info("Connected to mongoDB");
+   }
+});
 
 /* configurations */
 //setting up socket.io for real time data
@@ -29,8 +37,13 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 //default route
 app.get('/', function(req, res) {
-    res.render('index.html');
-})
+    res.sendFile(path.join(__dirname + '/public/login.html')); 
+});
+
+
+app.get('/dashboard', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/views/index.html')); 
+});
 
 app.use('/api', require('./routes.js'));
 
