@@ -2,7 +2,7 @@ function stackedAreaChart(){
 
 var histcatexplong = [
   {
-    "key" : "OTM" ,
+    "key" : "Module 1" ,
     "values" : [ 
 	[ 1380585600000 , 1] , 
 	[ 1380672000000 , 6] , 
@@ -99,7 +99,7 @@ var histcatexplong = [
 	]
   } ,
   {
-    "key" : "PAT" ,
+    "key" : "Module 2" ,
     "values" : [ 
 	[ 1380585600000 , 0] , 
 	[ 1380672000000 , 3] , 
@@ -196,7 +196,7 @@ var histcatexplong = [
 	]
   } ,
   {
-    "key" : "WebM" ,
+    "key" : "Module 3" ,
     "values" : [ 
 	[ 1380585600000 , 0] , 
 	[ 1380672000000 , 2] , 

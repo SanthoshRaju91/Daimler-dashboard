@@ -376,3 +376,5 @@ undefined[2016-01-14 11:15:23.340] [INFO] appLog - Server listening on port: 300
 [2016-01-26 17:48:47.222] [ERROR] appLog - No result found
 [2016-01-26 17:58:48.520] [INFO] appLog - Server listening on port: 3000
 [2016-01-26 17:58:49.425] [INFO] appLog - Connected to mongoDB
+[2016-01-26 19:00:45.154] [INFO] appLog - Server listening on port: 3000
+[2016-01-26 19:00:46.012] [INFO] appLog - Connected to mongoDB

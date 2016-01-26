@@ -1,7 +1,7 @@
 function drawLineChart(){
 var testdata = [
   {
-    "key" : "All Tracks - Total Incidents" ,
+    "key" : "Actual" ,
     "bar": true,
     "values" : [ 
 				[ 1380590000000 , 44] , 
@@ -99,7 +99,7 @@ var testdata = [
 			]
   },
   {
-    "key" : "WebMethods Track Incidents" ,
+    "key" : "Planned" ,
     "values" : [ 
 				[ 1380585600000 , 0] , 
 				[ 1380672000000 , 2] , 

@@ -126,7 +126,7 @@ function plotMultiLineChart(divID,data) {
     }));
     y.domain([0, d3.max(data, function (d) {
         return d.price;
-    })]);
+    })]);  
 
     // Nest the entries by symbol
     var dataNest = d3.nest()
