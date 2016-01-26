@@ -142,10 +142,10 @@ function drawLine(){
             x: -20 //center
         },
         xAxis: {
-            categories: x_axis,
-           /* title:{
-                text:'Week Ending'
-            }*/
+            categories: x_axis,           
+        },
+        title:{
+                text:'Line Chart'
         },
         credits: {
             enabled: false
@@ -188,9 +188,9 @@ function drawBar(){
         chart: {
             type: 'column'
         },
-       /* title: {
-            text: 'Monthly Average Rainfall'
-        },
+       title: {
+            text: 'Bar Chart'
+        },/*
         subtitle: {
             text: 'Source: WorldClimate.com'
         },*/
@@ -258,10 +258,10 @@ function draw3d(){
         },
         yAxis: {
             allowDecimals: false,
-            min: 0,
-            /*title: {
-                text: 'Number of fruits'
-            }*/
+            min: 0,            
+        },
+        title: {
+                text: '3D Column Chart'
         },
         exporting: { 
             enabled: false
@@ -302,7 +302,7 @@ function drawPie(){
             type: 'pie'
         },
         title: {
-            text: ''
+            text: 'Pie Chart'
         },
         tooltip: {
             pointFormat: ''
@@ -368,9 +368,9 @@ function  drawStacked(){
         chart: {
             type: 'column'
         },
-        /*title: {
-            text: 'Stacked column chart'
-        },*/
+        title: {
+            text: 'Stacked Column Chart'
+        },
         xAxis: {
             categories: x_axis
         },
@@ -422,12 +422,9 @@ function drawBarForPlannedvsActual(){
         chart: {
             type: 'column'
         },
-       /* title: {
-            text: 'Monthly Average Rainfall'
+       title: {
+            text: 'Bar Graph'
         },
-        subtitle: {
-            text: 'Source: WorldClimate.com'
-        },*/
         xAxis: {
             categories: x_axis,
             crosshair: true
