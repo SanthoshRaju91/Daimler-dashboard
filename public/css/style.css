@@ -11,6 +11,7 @@ body {
  overflow: auto; 
 }
 
+
 .main-content {
  padding-left: 60px;    
 }
@@ -117,7 +118,7 @@ body {
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -200px;
 }
 
 /* Sidebar Styles */
@@ -481,3 +482,8 @@ div#arrowred {
   min-width: 100px;
   min-height: 100px;
 }*/
+
+
+.containerClass {
+    margin-top: 20px;
+}

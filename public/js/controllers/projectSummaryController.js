@@ -13,7 +13,10 @@ app.controller('projectSummaryController', ['$scope', function($scope) {
         xAxis: {
             categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
         },
-        yAxis: {
+        yAxis: {            
+            min: -10,
+            max: 10,
+            ticketInterval: 5,
             title: {
                 text: 'Resource'
             },
@@ -35,7 +38,7 @@ app.controller('projectSummaryController', ['$scope', function($scope) {
         series: [{
             name: '',
             showInLegend: false,
-            data: [7, 6, 9, 14, 18, 21]
+            data: [7, -6, 9, 2, 5, -5]
         }]
     };
     
@@ -52,6 +55,9 @@ app.controller('projectSummaryController', ['$scope', function($scope) {
             categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7']
         },
         yAxis: {
+            min: -10,
+            max: 10,
+            ticketInterval: 5,
             title: {
                 text: 'Resource'
             },

@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'dashBoard', 'programLevel', 'lobView', 'projectSummary', 'viewProfile', 'projectExecution']);
+var myApp = angular.module('myApp', ['ngRoute', 'dashBoard', 'programLevel', 'lobView', 'projectSummary', 'viewProfile', 'projectExecution', 'myPage']);
 
 
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -31,6 +31,10 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     .when('/viewProfile', {
         templateUrl: 'views/viewProfile.html',
         controller: 'viewProfileController'
+    })
+    .when('/myPage', {
+        templateUrl: 'views/myPage.html',
+        controller: 'myPageController'
     })
     .otherwise({redirectTo: '/'});
 }]);

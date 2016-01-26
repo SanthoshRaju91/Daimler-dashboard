@@ -13,7 +13,7 @@ router.post('/login', function(req, res) {
        if(err) {
            logger.error("Error in logging in " + err);
            res.json({status: 500, message: "error in login"});
-       } else if(!result) {
+       } else if(!!result) {
            logger.error("No result found");
            res.json({status: 404, message: "No user found"});
        } else {

@@ -16,6 +16,8 @@ app.controller('programLevelController', ['$scope', function($scope) {
         },
         yAxis: {
             min: 0,
+            max: 100,
+            ticketInterval: 10,
             title: {
                 text: 'Total Test Cases Executed'
             },
@@ -56,10 +58,10 @@ app.controller('programLevelController', ['$scope', function($scope) {
         },
         series: [{
             name: 'Passed',
-            data: [5, 3, 4, 7, 2, 4, 5, ,6, 3, 8, 5, 9]
+            data: [50, 33, 42, 17, 22, 44, 56, ,67, 31, 83 ,35, 49]
         }, {
             name: 'Failed',
-            data: [2, 2, 3, 2, 1, 2, 3 ,4 , 1, 4, 2, 3]
+            data: [22, 12, 13, 12, 21, 12, 13 ,14 , 11, 14, 22, 13]
         }]
     };
     
@@ -146,6 +148,21 @@ app.controller('programLevelController', ['$scope', function($scope) {
         },
         xAxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']           
+        }, 
+        yAxis: {
+            min: 0,
+            max: 100,
+            ticketInterval: 10,
+            title: {
+                text: 'Level Of Automation'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
         },
         tooltip: {
             headerFormat: '<b>{series.name}</b><br>',
@@ -160,19 +177,19 @@ app.controller('programLevelController', ['$scope', function($scope) {
         },
         series: [{
             name: 'Project 1',
-            data: [2, 3, 4 ,6, 7, 12, 4, 3, 6, 7, 4, 9]
+            data: [20, 30, 40 ,62, 72, 12, 42, 33, 60, 47, 24, 69]
         }, {
             name: 'Project 2',
-            data: [3, 4, 5, 1, 2, 8, 4, 6, 3, 9, 1, 3]
+            data: [33, 24, 45, 12, 23, 85, 43, 63, 23, 59, 51, 33]
         }, {
             name: 'Project 3',
-            data: [4, 5, 8, 2, 6, 3, 9, 10, 11, 23, 4, 6]
+            data: [44, 55, 38, 22, 46, 33, 79, 30, 51, 23, 34, 56]
         }, {
             name: 'Project 4',
-            data: [3, 5, 6, 11, 2, 3, 5, 7, 2, 12, 3, 4]
+            data: [43, 55, 36, 51, 42, 53, 35, 57, 32, 32, 43, 34]
         }, {
             name: 'Project 5',
-            data: [4, 8, 3, 2, 5, 11, 2, 5, 7, 11, 6, 5]
+            data: [54, 38, 23, 42, 55, 61, 32, 45, 57, 41, 36, 45]
         }]
     }
 }]);

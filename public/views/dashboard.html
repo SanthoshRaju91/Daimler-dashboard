@@ -4,17 +4,43 @@
     </div>
 
     <div class="row" style = "margin-left: 3px;">
-        <div class = "col-sm-8 panel panel-default program-health">
-            <div class="panel-body program-health-container">
-                <h3 class="text-center program-head animated flash">Program Health</h3>
-                <div style = "display: inline">
-                    <div id="container-speed" style="width: 160px; height: 150px; margin: 0px; float: left"></div>
-                    <div id="container-rpm" style="width: 160px; height: 150px; margin: 0px; float: left"></div>
-                    <div id="container-speed1" style="width: 160px; height: 150px; margin: 0px; float: left"></div>
-                    <div id="container-rpm1" style="width: 160px; height: 150px; margin: 0px; float: left"></div>
-                </div>                             
-            </div>        
-        </div>
+        <div class = "col-sm-8">
+            <h3 class="text-center program-head animated flash">Program Health</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="text-center">Effort Utilization</h5>
+                            <div id="effortsContainer" style="width: 200px; height: 150px; margin: 0px; margin-left: 50px; float: left"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="text-center">Program Health</h5>
+                            <div id="programHealthContainer" style="width: 200px; height: 150px; margin: 0px; margin-left: 50px; float: left"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="text-center">Cost Saving</h5>
+                            <div id="costSavingcontainer" style="width: 200px; height: 150px; margin: 0px; margin-left: 50px; float: left"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="text-center">People lob</h5>
+                            <div id="peopleContainer" style="width: 200px; height: 150px; margin: 0px; margin-left: 50px; float: left"></div>
+                        </div>
+                    </div>
+                </div>                                                                            
+            </div>                             
+        </div>        
         <div class="col-sm-4 notification-container">
              <div class="list-group">
                 <div class="list-group-item active">
@@ -32,7 +58,7 @@
             <div class="panel panel-default" style="margin-left: 4px;">                
                 <div class="panel-body">   
                     <h5 class = "text-center">Program View</h5>  
-                    <highchart config="chartConfig" class="span10 piechart"></highchart>                    
+                    <highchart config="programConfig" class="span10 piechart"></highchart>                    
                     <span class="text-center">
                         <a href="#/programView" class="btn btn-danger btn-sm views-button-custom">Click for complete Program View</a>
                     </span>                    
@@ -44,7 +70,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h5 class = "text-center">Lob view</h5>
-                    <highchart config="chartConfig" class="span10 piechart"></highchart>                    
+                    <highchart config="lobConfig" class="span10 piechart"></highchart>                    
                     <span class="text-center">
                         <a href="#/lobView" class="btn btn-danger btn-sm views-button-custom" style = "margin-left: 18px;">Click for complete Lob View</a>
                     </span> 
@@ -56,7 +82,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h5 class = "text-center">People View</h5>
-                    <highchart config="chartConfig" class="span10 piechart"></highchart>                    
+                    <highchart config="peopleConfig" class="span10 piechart"></highchart>                    
                     <span class="text-center">
                         <a href="#/lobView" class="btn btn-danger btn-sm views-button-custom" style="margin-left: 8px;">Click for complete People View</a>
                     </span>     
@@ -64,11 +90,510 @@
             </div>
         </div>
     </div>
-    <marquee class="rolling-text">Daimler M.B.R.D.I QA dashboard: View for the project landing page. </marquee>
+    <marquee class="rolling-text">channel patner program release 1 went live. </marquee>
 </div>
 
 <script>
+(function(){
     $(function () {
+         $('#effortsContainer').highcharts({
+
+            chart: {
+                type: 'gauge',
+                height: 150,
+                width: 200,
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+
+            title: {
+                text: ''
+            },
+
+            pane: {
+                startAngle: -150,
+                endAngle: 150,
+                background: [{
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#FFF'],
+                            [1, '#333']
+                        ]
+                    },
+                    borderWidth: 0,
+                    outerRadius: '109%'
+                }, {
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#333'],
+                            [1, '#FFF']
+                        ]
+                    },
+                    borderWidth: 1,
+                    outerRadius: '107%'
+                }, {
+                    // default background
+                }, {
+                    backgroundColor: '#DDD',
+                    borderWidth: 0,
+                    outerRadius: '105%',
+                    innerRadius: '103%'
+                }]
+            },
+              credits: {
+                enabled: false
+            },
+            exporting: { 
+                enabled: false
+            },
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 100,
+
+                minorTickInterval: 'auto',
+                minorTickWidth: 1,
+                minorTickLength: 10,
+                minorTickPosition: 'inside',
+                minorTickColor: '#666',
+
+                tickPixelInterval: 30,
+                tickWidth: 2,
+                tickPosition: 'inside',
+                tickLength: 10,
+                tickColor: '#666',
+                labels: {
+                    step: 2,
+                    rotation: 'auto'
+                },
+                plotBands: [{
+                    from: 0,
+                    to: 40,
+                    color: '#DF5353' // red
+                }, {
+                    from: 40,
+                    to: 60,
+                    color: '#DDDF0D' // yellow
+                }, {
+                    from: 60,
+                    to: 100,
+                    color: '#55BF3B' // green
+                }]
+            },
+            plotOptions: {
+                center: ['50', '50']  
+            },
+            series: [{
+                name: 'efforts',
+                data: [55],
+                tooltip: {
+                    valueSuffix: ' '
+                }
+            }]
+
+        },
+        // Add some life
+        function (chart) {
+            /*if (!chart.renderer.forExport) {
+                setInterval(function () {
+                    var point = chart.series[0].points[0],
+                        newVal,
+                        inc = Math.round((Math.random() - 0.5) * 20);
+
+                    newVal = point.y + inc;
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y - inc;
+                    }
+
+                   // point.update(newVal);
+
+                }, 3000);
+            }*/
+        });
+
+    });
+})();
+(function(){
+    $(function () {
+         $('#programHealthContainer').highcharts({
+
+            chart: {
+                height: 150,
+                width: 180,
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+
+            title: {
+                text: ''
+            },
+
+            pane: {
+                startAngle: -150,
+                endAngle: 150,
+                background: [{
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#FFF'],
+                            [1, '#333']
+                        ]
+                    },
+                    borderWidth: 0,
+                    outerRadius: '109%'
+                }, {
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#333'],
+                            [1, '#FFF']
+                        ]
+                    },
+                    borderWidth: 1,
+                    outerRadius: '107%'
+                }, {
+                    // default background
+                }, {
+                    backgroundColor: '#DDD',
+                    borderWidth: 0,
+                    outerRadius: '105%',
+                    innerRadius: '103%'
+                }]
+            },
+              credits: {
+                enabled: false
+            },
+            exporting: { 
+                enabled: false
+            },
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 200,
+
+                minorTickInterval: 'auto',
+                minorTickWidth: 1,
+                minorTickLength: 10,
+                minorTickPosition: 'inside',
+                minorTickColor: '#666',
+
+                tickPixelInterval: 30,
+                tickWidth: 2,
+                tickPosition: 'inside',
+                tickLength: 10,
+                tickColor: '#666',
+                labels: {
+                    step: 2,
+                    rotation: 'auto'
+                },
+                title: {
+                    text: ''
+                },
+                plotBands: [{
+                    from: 0,
+                    to: 120,
+                    color: '#DF5353' // green
+                }, {
+                    from: 120,
+                    to: 160,
+                    color: '#DDDF0D' // yellow
+                }, {
+                    from: 160,
+                    to: 200,
+                    color: '#55BF3B' // red
+                }]
+            },
+
+            series: [{
+                name: 'program',
+                data: [150],
+                tooltip: {
+                    valueSuffix: ' '
+                }
+            }]
+
+        },
+        // Add some life
+        function (chart) {
+           /* if (!chart.renderer.forExport) {
+                setInterval(function () {
+                    var point = chart.series[0].points[0],
+                        newVal,
+                        inc = Math.round((Math.random() - 0.5) * 20);
+
+                    newVal = point.y + inc;
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y - inc;
+                    }
+
+                    //point.update(newVal);
+
+                }, 3000);
+            }*/
+        });
+
+    });
+})();    
+    
+(function(){
+    $(function () {
+         $('#costSavingcontainer').highcharts({
+
+            chart: {
+                height: 150,
+                width: 180,
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+
+            title: {
+                text: ''
+            },
+
+            pane: {
+                startAngle: -150,
+                endAngle: 150,
+                background: [{
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#FFF'],
+                            [1, '#333']
+                        ]
+                    },
+                    borderWidth: 0,
+                    outerRadius: '109%'
+                }, {
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#333'],
+                            [1, '#FFF']
+                        ]
+                    },
+                    borderWidth: 1,
+                    outerRadius: '107%'
+                }, {
+                    // default background
+                }, {
+                    backgroundColor: '#DDD',
+                    borderWidth: 0,
+                    outerRadius: '105%',
+                    innerRadius: '103%'
+                }]
+            },
+              credits: {
+                enabled: false
+            },
+            exporting: { 
+                enabled: false
+            },
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 100,
+
+                minorTickInterval: 'auto',
+                minorTickWidth: 1,
+                minorTickLength: 10,
+                minorTickPosition: 'inside',
+                minorTickColor: '#666',
+
+                tickPixelInterval: 30,
+                tickWidth: 2,
+                tickPosition: 'inside',
+                tickLength: 10,
+                tickColor: '#666',
+                labels: {
+                    step: 2,
+                    rotation: 'auto'
+                },
+                title: {
+                    text: ''
+                },
+                plotBands: [{
+                    from: 0,
+                    to: 50,
+                    color: '#55BF3B' // green
+                }, {
+                    from: 50,
+                    to: 70,
+                    color: '#DDDF0D' // yellow
+                }, {
+                    from: 70,
+                    to: 100,
+                    color: '#DF5353' // red
+                }]
+            },
+
+            series: [{
+                name: '',
+                data: [9],
+                tooltip: {
+                    valueSuffix: ' '
+                }
+            }]
+
+        },
+        // Add some life
+        function (chart) {
+          /*  if (!chart.renderer.forExport) {
+                setInterval(function () {
+                    var point = chart.series[0].points[0],
+                        newVal,
+                        inc = Math.round((Math.random() - 0.5) * 20);
+
+                    newVal = point.y + inc;
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y - inc;
+                    }
+
+                   // point.update(newVal);
+
+                }, 3000);
+            }*/
+        });
+
+    });
+
+})();    
+    
+(function speedo4(){
+    $(function () {
+         $('#peopleContainer').highcharts({
+
+            chart: {
+                height: 150,
+                width: 180,
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+
+            title: {
+                text: ''
+            },
+
+            pane: {
+                startAngle: -150,
+                endAngle: 150,
+                background: [{
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#FFF'],
+                            [1, '#333']
+                        ]
+                    },
+                    borderWidth: 0,
+                    outerRadius: '109%'
+                }, {
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            [0, '#333'],
+                            [1, '#FFF']
+                        ]
+                    },
+                    borderWidth: 1,
+                    outerRadius: '107%'
+                }, {
+                    // default background
+                }, {
+                    backgroundColor: '#DDD',
+                    borderWidth: 0,
+                    outerRadius: '105%',
+                    innerRadius: '103%'
+                }]
+            },
+              credits: {
+                enabled: false
+            },
+            exporting: { 
+                enabled: false
+            },
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 200,
+
+                minorTickInterval: 'auto',
+                minorTickWidth: 1,
+                minorTickLength: 10,
+                minorTickPosition: 'inside',
+                minorTickColor: '#666',
+
+                tickPixelInterval: 30,
+                tickWidth: 2,
+                tickPosition: 'inside',
+                tickLength: 10,
+                tickColor: '#666',
+                labels: {
+                    step: 2,
+                    rotation: 'auto'
+                },
+                title: {
+                    text: ''
+                },
+                plotBands: [{
+                    from: 0,
+                    to: 120,
+                    color: '#DF5353' // red
+                }, {
+                    from: 120,
+                    to: 160,
+                    color: '#DDDF0D' // yellow
+                }, {
+                    from: 160,
+                    to: 200,
+                    color: '#55BF3B' // green
+                }]
+            },
+
+            series: [{
+                name: 'Speed',
+                data: [180],
+                tooltip: {
+                    valueSuffix: ' '
+                }
+            }]
+
+        },
+        // Add some life
+        function (chart) {
+            /*if (!chart.renderer.forExport) {
+                setInterval(function () {
+                    var point = chart.series[0].points[0],
+                        newVal,
+                        inc = Math.round((Math.random() - 0.5) * 20);
+
+                    newVal = point.y + inc;
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y - inc;
+                    }
+
+                   // point.update(newVal);
+
+                }, 3000);
+            }*/
+        });
+
+    });
+})();    
+    
+  /*  $(function () {
 
     var gaugeOptions = {
 
@@ -319,5 +844,5 @@
 
     }));
 
-});
+});*/
 </script>        

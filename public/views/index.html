@@ -17,7 +17,9 @@
         <script src = '../bower_components/highcharts-ng/dist/highcharts-ng.min.js'></script>                                
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>        
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+        <script src="/js/speedo.js"></script>
+<!--        <script src="https://code.highcharts.com/modules/exporting.js"></script>-->
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.13/d3.min.js" charset="utf-8"></script>
         
@@ -84,6 +86,7 @@
                  </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/myPage" class = "btn btn-default btn-logout" style = "color: black !important;">MY PAGE</a></li>
                         <li><a data-toggle = "modal" data-target = "#themeModal" style = "cursor: pointer">Themes</a></li>
                         <li><a href="#">Alerts <span class="badge">10</span></a></li>
                         <li><a href="#" class = "btn btn-default btn-logout" style = "color: black !important;">Logout</a></li>
@@ -120,15 +123,92 @@
                     </li>                   
                 </ul>
             </div>
+            <div id = "page-content-wrapper">
+                <div class="">
+                    <div class="container-fluid" ng-view></div>
+                </div>            
+            </div>   
         </div>          
-        <div id = "page-content-wrapper">
-            <div class="col-md-offset-2 col-md-8 view-container">
-                <div class="container-fluid" ng-view></div>
-            </div>            
-        </div>                
+        <div class="modal fade" role="dialog" id="myModal" ng-controller = "myPageController">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                
+                      <h4 class="modal-title" id="myModalLabel">Configure Chart</h4>
+                  </div>
+                  <div class="modal-body" style = "height: 65px;">
+                      <div class="form-inline">
+                        <div class="col-md-4">
+                            <select id ="xInterval" class="form-control"> 
+                                <option>Select X-Axis</option>
+                                <option ng-repeat = "xAxis in xAxes" value="{{xAxis.key}}">{{xAxis.value}}</option>
+                            </select>                            
+                        </div>
+                      <div class="col-md-4">
+                          <select id ="yInterval" class="form-control">
+                              <option>Select Y-Axis</option>
+                                <option ng-repeat = "yAxis in yAxes" value="{{yAxis.key}}">{{yAxis.value}}</option>
+                          </select>
+                      </div>
+                          <div class="col-md-4">
+                            <select id = "chartType" class="form-control">
+                                <option>Select Chart</option>
+                                <option ng-repeat = "chartType in chartTypes" value="{{chartType.key}}">{{chartType.value}}</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="drawGraph(); ">Save changes</button>
+                  </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <div class="modal fade" id = "submitModal" role = "dialog" ng-controller = "myPageController">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style = "height: 230px;">
+                        <h4 class="modal-header">Set interval and submit to finish.</h4>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class=" col-md-4 control-label">Choose Interval Period</label>
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>Select</option>
+                                        <option value = "1">Every Day</option>
+                                        <option value = "2">Every Week</option>
+                                        <option value = "3">Every 15 days</option>
+                                        <option value = "4">Every Month</option>                                
+                                    </select>
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Email Address</label>
+                                <div class="col-md-6">
+                                    <input type="email" class = "form-control" placeholder = "Email Address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class = "col-md-offset-4 col-md-6">
+                                    <button type = "button" class="btn btn-default" style="margin-right: 10px" data-dismiss = "modal">Cancel</button>
+                                    <button type = "button" data-dismiss = "modal" class="btn btn-success"  data-target = "#confirmModal" ng-click = "submitConfig()">Submit</button>
+                                </div>                                                                
+                            </div>                            
+                        </div>                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
         <script src="/js/d3/liquidFillGauge.js" language="JavaScript"></script>
         <script src="/js/d3/index.js"></script>
         <script src="/js/d3/bullet.js"></script>
+        <script src = "/js/mypage.js"></script>
         <script src="/js/app.js"></script>
         <script src="/js/controllers/dashboardController.js"></script>    
         <script src="/js/controllers/programLevelController.js"></script> 
@@ -136,5 +216,6 @@
         <script src="/js/controllers/projectSummaryController.js"></script> 
         <script src="/js/controllers/projectExecutionController.js"></script>         
         <script src="/js/controllers/viewProfileController.js"></script>         
+        <script src="/js/controllers/myPageController.js"></script>         
 </body>
 </html>
