@@ -1,4 +1,4 @@
-# SupportDashboard
+# Daimler Dashboard
 ##Instructions
 
 To set up the workspace in your local machine, please run the following commands. We are using mongoDB to store the data, make sure mongoDB server is setup and running in your local machine, if not please follow the below link to setup mongoDB, up running in your local.
