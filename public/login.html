@@ -13,41 +13,39 @@
         <link rel="stylesheet" href="css/login.css">        
     </head>
     <body>
-        <div class="container">
-            <div class="col-md-offset-2 login-container animated fadeIn">                
-                <div class="col-md-6">
-                    <div class="logo">
-                        <h1 class="text-center">Daimler</h1>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default">
+        <div class="container" ng-controller="FormController">
+            <div style="position:absolute; left:0px; top:0px; margin:2% 0 0 10%;"> <img src="images/quinnox_logo.jpg" style=""></div>
+            <div style="overflow:hidden; position:absolute; left:0px; top:50px; margin:126px 0 0 0;"> <img src="images/bg_chev.gif"></div>
+            <img src="http://www.itwconsulting.com/img/strategy-and-consulting-what-we-do.png" style="margin: 15% 0 0 6%;">
+
+            <div class="row">
+                <div class="col-md-offset-6 col-md-6">
+                    <div class="panel panel-default" style="
+            margin: -100% 0 0 0;">
                         <div class="panel-body">
-                            <form name="myForm" ng-controller="FormController" novalidate>
+                            <h1 class="text-center animated fadeIn"><span class="ion-person"></span> &nbsp;Login</h1><br/><br/>
+                            <form name="myForm" novalidate class="form-horizontal">
                                 <div class="form-group">
-                                    <div class="inner-addon right-addon">
-                                        <i class="ion-ios-person-outline ion"></i>
-                                        <input type = "text" placeholder="Username" name = "username" ng-model = "username" class="form-control" required>      
-                                    </div>            
-                                    <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.required">
+                                    <input type="text" placeholder="Username" name="username" ng-model="username" class="form-control" required style="margin:auto;width:80%!important">
+                                    <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.required" />
+
                                 </div>
                                 <div class="form-group">
-                                    <div class="inner-addon right-addon">
-                                        <i class="ion-ios-locked-outline ion"></i>
-                                        <input type = "password" placeholder="Password" name = "password" ng-model = "password" class="form-control" required>
-                                    </div>
-                                    <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$error.required">
-                                </div>                   
+                                    <input type="password" placeholder="Password" name="password" ng-model="password" class="form-control" required style="margin:auto;width:80%!important">
+                                    <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$error.required"/>
+                                </div>
+                                 <span ng-if = "error" class="text-center alert alert-danger"><strong>Invalid Login!!</strong>  either Username or Password is incorrect</span><br/><br/>
                                 <div class="form-group">
                                     <input type="submit" ng-disabled="myForm.username.$error.required ||
-  myForm.password.$error.required" value="Login" class="btn-block btn" ng-click = "login()">
+              myForm.password.$error.required" value="Login" class="btn-block btn-success btn" ng-click="login()" style="margin:auto;width:80%!important">
                                 </div>
-                                <hr>
-                                <a href="#" class="text-center lost-password">Lost your password?</a>
+                                <div class="form-group">
+                                    <a href="#"><div class="help-block text-center">Forgot your password?</div></a>
+                                </div>
                             </form>
-                        </div>                    
+                        </div>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>         
         <script src="js/login.js"></script>        

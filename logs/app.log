@@ -384,3 +384,7 @@ undefined[2016-01-14 11:15:23.340] [INFO] appLog - Server listening on port: 300
 [2016-01-26 21:49:29.467] [INFO] appLog - Connected to mongoDB
 [2016-01-26 21:52:57.628] [ERROR] appLog - No result found
 [2016-01-26 22:17:58.904] [ERROR] appLog - No result found
+[2016-04-19 11:28:51.173] [INFO] appLog - Server listening on port: 3000
+[2016-04-19 11:28:52.883] [INFO] appLog - Connected to mongoDB
+[2016-04-19 11:28:53.407] [INFO] appLog - Initial setup login details loaded!!
+[2016-04-19 11:33:53.548] [ERROR] appLog - No result found

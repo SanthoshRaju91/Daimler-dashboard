@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html ng-app="loginApp">
+    <head>
+        <title>DashBoard application page</title>
+        
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">          
+        <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">        
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>        
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/login.css">        
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-md-offset-2 login-container animated fadeIn">                
+                <div class="col-md-6">
+                    <div class="logo">
+                        <h1 class="text-center">Daimler</h1>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form name="myForm" ng-controller="FormController" novalidate>
+                                <div class="form-group">
+                                    <div class="inner-addon right-addon">
+                                        <i class="ion-ios-person-outline ion"></i>
+                                        <input type = "text" placeholder="Username" name = "username" ng-model = "username" class="form-control" required>      
+                                    </div>            
+                                    <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$error.required">
+                                </div>
+                                <div class="form-group">
+                                    <div class="inner-addon right-addon">
+                                        <i class="ion-ios-locked-outline ion"></i>
+                                        <input type = "password" placeholder="Password" name = "password" ng-model = "password" class="form-control" required>
+                                    </div>
+                                    <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$error.required">
+                                </div>                   
+                                <div class="form-group">
+                                    <input type="submit" ng-disabled="myForm.username.$error.required ||
+  myForm.password.$error.required" value="Login" class="btn-block btn" ng-click = "login()">
+                                </div>
+                                <hr>
+                                <a href="#" class="text-center lost-password">Lost your password?</a>
+                            </form>
+                        </div>                    
+                    </div>
+                </div>                
+            </div>
+        </div>         
+        <script src="js/login.js"></script>        
+    </body>
+</html>
+
+
