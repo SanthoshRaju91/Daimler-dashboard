@@ -9,13 +9,21 @@ var path = require('path');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
+var User = require('./models/user.js');
 
 mongoose.connect(config.mongoURL, function(err) {
    if(err) {
        logger.error("Unable to connecto mongoDB " +err);
    } else {
        logger.info("Connected to mongoDB");
+       var user = new User({username: 'admin', password: 'admin', role: 'admin'});
+       user.save(function(err1) {
+           if(err1) {
+               logger.error("Initial seeding failed to " + err1);
+           } else {
+               logger.info("Initial setup login details loaded!!");
+           }
+       })
    }
 });
 
@@ -28,6 +36,9 @@ io.on('connection', function(err, socket) {
        logger.info("Socket.io is live");
    }
 });
+
+
+
 
 //application configuration
 app.use(express.static(__dirname + '/public'));
